@@ -74,9 +74,3 @@ resource "aws_route53_record" "mymedia-api-gateway-cname" {
   zone_id = "${data.aws_route53_zone.media_subdomain_00x_de.zone_id}"
   name    = "${var.test_subdomain_prefix}.${var.subdomain_name}"
   type    = "A"
-
-  alias {
-    name                   = "${aws_api_gateway_domain_name.mymedia.cloudfront_domain_name}"
-    zone_id                = "${aws_api_gateway_domain_name.mymedia.cloudfront_zone_id}"
-    evaluate_target_health = false
-  }

@@ -6,16 +6,22 @@ provider "aws" {
 resource "aws_instance" "staging" {
   ami           = "ami-"
   instance_type = "t2.micro"
-  key_name      = "keys"
+  key_name      = "abdulmalik"
 
-  provisioner "local-exec" {
-      command = "echo ${aws_instance.staging.public_ip} > ip_address.txt"
-    }
+  connection {
+    type     = "ssh"
+    user     = "ubuntu"
+    private_key = file("/path/to/pem/key")
+    host     = self.public_ip
+  }
+
+  provisioner "remote-exec" {
+    inline = [g
+    ]
+  }
 }
 
 resource "aws_eip" "ip" {
     vpc = true
     instance = aws_instance.staging.id
 }
-
-

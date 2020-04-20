@@ -1,2 +1,2 @@
 # tf-generis
-Random Terraform templates
+Terraform template for AWS infrastructure

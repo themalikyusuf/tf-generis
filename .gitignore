@@ -30,4 +30,4 @@ override.tf.json
 
 
 # Ignore local variable files
-*.ftvars
+*.tfvars

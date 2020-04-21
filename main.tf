@@ -1,10 +1,10 @@
 provider "aws" {
-  profile    = "default"
+  profile    = var.profile
   region     = var.region
 }
 
 resource "aws_instance" "staging" {
-  ami           = var.ami
+  ami           = var.amis[var.region]
   instance_type = var.instance_type
   key_name      = var.key_name
 

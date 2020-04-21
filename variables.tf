@@ -1,12 +1,8 @@
-variable "profile" {
-	default = "default"
-}
+variable "profile" { default = "default" }
 
-variable "region" {
-	default = "us-east-1"
-}
+variable "region" { default = "us-east-1" }
 
-variable "ami" {}
+variable "amis" {}
 
 variable "instance_type" {}
 
